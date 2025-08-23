@@ -1,5 +1,14 @@
 import {Task} from "./task.js"
-const task1 = new Task("Construction")
-task1.completed();
-console.log (task1);
+import { createTaskManager } from "./taskManager.js";
+
+const manager= createTaskManager();
+
+const task1 = manager.addTask("Build mini Project");
+const task2 = manager.addTask("Learn Closures");
+
+
+console.log(manager.getTask());
+//console.log(manager.completeTask(task1.id));
+console.log(manager.deleteTask(task2.id));
+console.log(manager.getTask());
 
